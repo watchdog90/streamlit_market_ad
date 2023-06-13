@@ -1,0 +1,8 @@
+Streamlit
+Pandas
+Numpy
+scikit-learn
+scipy
+pip
+pickle
+pymsteams
