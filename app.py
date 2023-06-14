@@ -36,7 +36,13 @@ def main():
 
     # (part1) ---- show raw data set and correlation -----------------------------------------------------
     if st.sidebar.checkbox('Show raw data', True):
-        st.write(df.head(5))
+        df_user_log = pd.read_csv('/app/streamlit_market_ad/user_log_sample.csv')
+        df_user_info = pd.read_csv('/app/streamlit_market_ad/user_info_sample.csv')
+        st.write(df_user_log.head(100))
+        st.write(df_user_info.head(100))
+
+    if st.sidebar.checkbox('Show preprocessed data', True):
+        st.write(df.head(100))
 
 
     # get input data from user
