@@ -71,7 +71,7 @@ def main():
         submission = pd.read_csv('/app/streamlit_market_ad/rank.csv')
         submission.sort_values("prob", inplace = True, ascending=False)
 
-        st.subheader('Prediction of High Potential (Loyal) Customer:')
+        st.subheader('Prediction of High Potential Customer:')
     
         st.write(submission.head(10))
 
