@@ -42,12 +42,14 @@ def main():
         st.write('time_stamp: mmdd')
         st.write('action_type: 0= click, 1= shop bag, 2= purchase, 3= list')
         st.write(df_user_log.head(50))
+        st.write(df_user_log.shape)
 
 
         st.subheader('user profile dataset')
         st.write('age: [0,18][18,24][25,29][30,34][35,39][40,49][>=50]')
         st.write('gender: 0= female, 1= male')
         st.write(df_user_info.head(5))
+        st.write(df_user_info.shape)
 
 
     st.subheader('⭐️ Preprocessed dataset')
