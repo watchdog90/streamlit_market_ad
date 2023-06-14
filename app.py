@@ -37,15 +37,25 @@ def main():
     if st.sidebar.checkbox('Show raw data', True):
         df_user_log = pd.read_csv('/app/streamlit_market_ad/user_log_sample.csv')
         df_user_info = pd.read_csv('/app/streamlit_market_ad/user_info_sample.csv')
-        st.write('user log dataset')
-        st.write(df_user_log.head(5))
-        st.write('user profile dataset')
+
+        st.subheader('user log dataset')
+        st.write('time_stamp: mmdd')
+        st.write('action_type: 0= click, 1= shop bag, 2= purchase, 3= list')
+        st.write(df_user_log.head(50))
+
+
+        st.subheader('user profile dataset')
+        st.write('age: [0,18][18,24][25,29][30,34][35,39][40,49][>=50]')
+        st.write('gender: 0= female, 1= male')
         st.write(df_user_info.head(5))
-        
+
+
     st.subheader('⭐️ Preprocessed dataset')
     if st.sidebar.checkbox('Show preprocessed data', False):
+        st.write('interatvie features: user & item, sell & item')
+        st.write('user buy/click, sell buy/click, diff age groups, diff genders, diff timestamps... ')
         st.write(df.head(5))
-
+        st.write(df.shape)
 
     # get input data from user
     st.subheader('⭐️ Customer prediction')
