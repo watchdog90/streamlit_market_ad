@@ -37,9 +37,11 @@ def main():
     if st.sidebar.checkbox('Show raw data', True):
         df_user_log = pd.read_csv('/app/streamlit_market_ad/user_log_sample.csv')
         df_user_info = pd.read_csv('/app/streamlit_market_ad/user_info_sample.csv')
+        st.write('user log dataset')
         st.write(df_user_log.head(5))
+        st.write('user profile dataset')
         st.write(df_user_info.head(5))
-
+        
     st.subheader('⭐️ Preprocessed dataset')
     if st.sidebar.checkbox('Show preprocessed data', False):
         st.write(df.head(5))
