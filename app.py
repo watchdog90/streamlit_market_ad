@@ -16,8 +16,6 @@ def main():
     # --- section 2.1 Predict Diabetes From Digital Medical Records -------------------------------------------
     st.title('High Potential Customer Propensity APP🏆🚀')
     st.sidebar.title('Machine learning for High Potential Customer🏆🚀')
-    st.subheader('⭐️ Raw dataset')
-
 
     @st.cache_data(persist=True)
     def load_data():
@@ -35,14 +33,16 @@ def main():
     df = load_data()
 
     # (part1) ---- show raw data set and correlation -----------------------------------------------------
+    st.subheader('⭐️ Raw dataset')
     if st.sidebar.checkbox('Show raw data', True):
         df_user_log = pd.read_csv('/app/streamlit_market_ad/user_log_sample.csv')
         df_user_info = pd.read_csv('/app/streamlit_market_ad/user_info_sample.csv')
-        st.write(df_user_log.head(100))
-        st.write(df_user_info.head(100))
+        st.write(df_user_log.head(5))
+        st.write(df_user_info.head(5))
 
-    if st.sidebar.checkbox('Show preprocessed data', True):
-        st.write(df.head(100))
+    st.subheader('⭐️ Preprocessed dataset')
+    if st.sidebar.checkbox('Show preprocessed data', False):
+        st.write(df.head(5))
 
 
     # get input data from user
