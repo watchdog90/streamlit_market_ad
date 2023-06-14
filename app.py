@@ -41,7 +41,7 @@ def main():
         st.subheader('user log dataset')
         st.write('time_stamp: mmdd')
         st.write('action_type: 0= click, 1= shop bag, 2= purchase, 3= list')
-        st.write(df_user_log.head(50))
+        st.write(df_user_log.head(5))
         st.write(df_user_log.shape)
 
 
