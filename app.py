@@ -16,9 +16,14 @@ def main():
     st.sidebar.title('Machine learning for High Potential Customer🏆🚀')
 
     @st.cache_data(persist=True)
-    def load_data():
-        data = pd.read_csv('sample.csv')
-        return data
+    def load_original_data():
+        url = 'https://github.com/watchdog90/streamlit_market_ad/edit/main/sample.csv'
+        response = requests.get(url)
+        if response.status_code == 200:
+            return pd.read_csv(StringIO(response.text))
+        else:
+            st.error("Failed to load data from GitHub.")
+            return None
     
   
     
