@@ -16,7 +16,7 @@ def main():
     st.sidebar.title('Machine learning for High Potential Customer🏆🚀')
 
     @st.cache_data(persist=True)
-    def load_original_data():
+    def load_data():
         url = 'https://github.com/watchdog90/streamlit_market_ad/edit/main/sample.csv'
         response = requests.get(url)
         if response.status_code == 200:
