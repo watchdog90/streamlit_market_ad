@@ -18,12 +18,8 @@ def main():
 
     @st.cache_data(persist=True)
     def load_data():
-        data = pd.read_csv('/app/streamlit_market_ad/sample.csv')
-        # label = LabelEncoder()
-        # for col in data.columns:
-        #     data[col] = label.fit_transform(data[col])
-        return data
-      
+        url = "https://github.com/watchdog90/streamlit_market_ad/blob/main/sample.csv"
+        return pd.read_csv(url)
   
     def webhook_msg(WH_LINK, text):
         msg = pymsteams.connectorcard(WH_LINK)
