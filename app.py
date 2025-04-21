@@ -17,7 +17,7 @@ def main():
 
     @st.cache_data(persist=True)
     def load_data():
-        data = pd.read_csv('/app/streamlit_market_ad/sample.csv')
+        data = pd.read_csv('sample.csv')
         return data
     
   
