@@ -18,8 +18,10 @@ def main():
 
     @st.cache_data(persist=True)
     def load_data():
-        url = "https://github.com/watchdog90/streamlit_market_ad/blob/main/sample.csv"
-        return pd.read_csv(url)
+        data = pd.read_csv('/app/streamlit_market_ad/sample.csv')
+        return data
+            
+
   
     def webhook_msg(WH_LINK, text):
         msg = pymsteams.connectorcard(WH_LINK)
