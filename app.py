@@ -18,16 +18,13 @@ def main():
 
     @st.cache_data(persist=True)
     def load_data():
-        url = 'https://github.com/watchdog90/streamlit_market_ad/edit/main/sample.csv'
-        response = requests.get(url)
-        if response.status_code == 200:
-            return pd.read_csv(StringIO(response.text))
-        else:
-            st.error("Failed to load data from GitHub.")
-            return None
-    
+        data = pd.read_csv('/app/streamlit_market_ad/sample.csv')
+        # label = LabelEncoder()
+        # for col in data.columns:
+        #     data[col] = label.fit_transform(data[col])
+        return data
+      
   
-    
     def webhook_msg(WH_LINK, text):
         msg = pymsteams.connectorcard(WH_LINK)
         msg.text(str(text))
