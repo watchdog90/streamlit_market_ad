@@ -6,4 +6,4 @@ scipy
 pip
 pymsteams
 xgboost
-request
+requests
